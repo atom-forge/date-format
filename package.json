@@ -9,7 +9,7 @@
 		"typescript"
 	],
 	"author": "Gergely Laborci",
-	"license": "SEE LICENSE IN LICENSE",
+	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
