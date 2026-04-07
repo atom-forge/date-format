@@ -1,0 +1,37 @@
+{
+	"name": "@atom-forge/date-format",
+	"version": "0.1.0",
+	"description": "Lightweight, token-based date formatting utility using Intl.DateTimeFormat",
+	"keywords": [
+		"date",
+		"format",
+		"intl",
+		"typescript"
+	],
+	"author": "Gergely Laborci",
+	"license": "SEE LICENSE IN LICENSE",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"repository": {
+		"url": "git://github.com/atom-forge/date-format.git"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "bun run build",
+		"release": "npm publish --access public"
+	},
+	"devDependencies": {
+		"@types/node": "^25.3.1",
+		"typescript": "^5.0.0"
+	}
+}
