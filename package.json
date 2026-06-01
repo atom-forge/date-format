@@ -1,6 +1,6 @@
 {
 	"name": "@atom-forge/date-format",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Lightweight, token-based date formatting utility using Intl.DateTimeFormat",
 	"keywords": [
 		"date",
@@ -8,7 +8,10 @@
 		"intl",
 		"typescript"
 	],
-	"author": "Gergely Laborci",
+	"author": {
+		"name": "Gergely Laborci",
+		"url": "https://github.com/laborci"
+	},
 	"license": "MIT",
 	"type": "module",
 	"main": "dist/index.js",
