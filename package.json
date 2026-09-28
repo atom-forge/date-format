@@ -23,7 +23,8 @@
 		}
 	},
 	"repository": {
-		"url": "git://github.com/atom-forge/date-format.git"
+		"type": "git",
+		"url": "git+https://github.com/atom-forge/date-format.git"
 	},
 	"files": [
 		"dist",
@@ -31,12 +32,17 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"prepublishOnly": "bun run build",
+		"test": "npm run build && node --test test/*.test.js",
+		"prepublishOnly": "npm test",
 		"release": "npm publish --access public",
-		"pub-check": "bun run scripts/pub-check.ts",
-		"pub": "bun run scripts/pub.ts"
+		"pub-check": "ship-it check",
+		"pub": "ship-it"
+	},
+	"ship": {
+		"verify": ["npm test", "npm pack --dry-run --ignore-scripts"]
 	},
 	"devDependencies": {
+		"@atom-forge/ship": "file:../ship",
 		"@types/node": "^25.3.1",
 		"typescript": "^5.0.0"
 	}

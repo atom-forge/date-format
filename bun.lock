@@ -1,15 +1,19 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "@atom-forge/date-format",
       "devDependencies": {
+        "@atom-forge/ship": "file:../ship",
         "@types/node": "^25.3.1",
         "typescript": "^5.0.0",
       },
     },
   },
   "packages": {
+    "@atom-forge/ship": ["@atom-forge/ship@file:../ship", { "bin": { "ship-it": "bin/ship-it.js" } }],
+
     "@types/node": ["@types/node@25.5.2", "", { "dependencies": { "undici-types": "~7.18.0" } }, "sha512-tO4ZIRKNC+MDWV4qKVZe3Ql/woTnmHDr5JD8UI5hn2pwBrHEwOEMZK7WlNb5RKB6EoJ02gwmQS9OrjuFnZYdpg=="],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
