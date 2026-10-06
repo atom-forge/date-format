@@ -2,6 +2,9 @@
 
 Lightweight, token-based date formatting utility built on `Intl.DateTimeFormat`.
 
+For coding assistants, see [ai-entrypoint.md](./ai-entrypoint.md) for when to use
+this package, API guidance, and common pitfalls.
+
 ## Installation
 
 ```bash

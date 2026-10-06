@@ -28,7 +28,8 @@
 	},
 	"files": [
 		"dist",
-		"CHANGELOG.md"
+		"CHANGELOG.md",
+		"ai-entrypoint.md"
 	],
 	"scripts": {
 		"build": "tsc",

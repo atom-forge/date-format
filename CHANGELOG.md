@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Include an AI entrypoint guide with package selection guidance, API examples and formatting caveats.
+
 ### Changed
 - Use the shared Ship CLI for release preparation, exact-version publication checks and CI tag validation.
 
