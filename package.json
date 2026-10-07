@@ -29,7 +29,8 @@
 	"files": [
 		"dist",
 		"CHANGELOG.md",
-		"ai-entrypoint.md"
+		"README-AI.md",
+		"docs"
 	],
 	"scripts": {
 		"build": "tsc",

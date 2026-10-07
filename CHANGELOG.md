@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Consolidate the API reference in docs/api.md, linked from README.md and the concise README-AI.md.
+- Rename ai-entrypoint.md to README-AI.md.
+- Replace lengthy contribution documentation with concise repository rules in AGENTS.md.
+
 ## [0.1.4] - 2026-10-06
 
 ### Added

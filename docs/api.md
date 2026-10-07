@@ -1,22 +1,8 @@
-# AI entrypoint: @atom-forge/date-format
+# API reference: @atom-forge/date-format
 
-This document gives coding assistants the context needed to choose and use this package correctly. See [README.md](./README.md) for installation, the complete token reference, and development/release instructions. The public implementation is in [src/index.ts](./src/index.ts).
+The shared API reference for users and coding assistants. See [README.md](../README.md) for installation.
 
-## When to use this package
-
-Use `@atom-forge/date-format` when a JavaScript or TypeScript application needs to render a date or time using an explicit template, with localized month/weekday names and an optional timezone. Typical uses include UI labels, report dates, and date/time strings whose field order and separators must be controlled by the application.
-
-The package is a lightweight, dependency-free-at-runtime formatter built on `Intl.DateTimeFormat`. It exports one function, `dateFormat`, as an ESM named export and includes TypeScript declarations.
-
-Do not use it for:
-
-- Parsing a string according to a custom date pattern or validating user input.
-- Date arithmetic, durations, relative time, date comparisons, or scheduling.
-- Converting a local wall-clock time into an instant in a named timezone.
-- ISO timestamp serialization: use `Date.prototype.toISOString()` when that is the requirement.
-- Automatically choosing a locale's conventional date layout: use `Intl.DateTimeFormat` directly when no explicit template is needed.
-
-Formatting in a timezone changes the displayed fields of an existing instant; it does not mutate the input date.
+The package exports one function, `dateFormat`, as an ESM named export and includes TypeScript declarations. Formatting in a timezone changes the displayed fields of an existing instant; it does not mutate the input date.
 
 ## Public API
 
@@ -96,6 +82,6 @@ Recognized tokens are replaced wherever they appear, including repeated occurren
 - The runtime must support `Intl.DateTimeFormat`, `formatToParts`, and the requested locale/timezone data. Formatters are cached internally; callers do not need to manage them.
 - In tests, specify the date, locale, and timezone rather than depending on the current time or machine timezone. Avoid portable assertions that require a particular timezone-name spelling.
 
-## If modifying this repository
+## Documentation maintenance
 
-Keep changes focused on the formatting API and preserve existing token semantics unless a breaking change is explicitly requested. Consult the README for the development and release workflow. Run `npm test` to build the TypeScript source and execute the Node test suite. Keep this guide and the README token reference aligned with any public API changes.
+Update this reference whenever public API or token semantics change. README.md and README-AI.md link here rather than maintaining separate API references.
