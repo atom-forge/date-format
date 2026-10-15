@@ -1,5 +1,5 @@
 ---
-name: Date Format
+title: Date Format
 subtitle: "@atom-forge/date-format"
 author: AtomForge
 language: en
