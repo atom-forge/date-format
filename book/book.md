@@ -1,6 +1,7 @@
 ---
 name: Date Format
 subtitle: "@atom-forge/date-format"
+author: AtomForge
 language: en
 id: atom-forge-date-format
 intro: A practical guide to token-based date formatting, localization, and reliable timezone handling.
