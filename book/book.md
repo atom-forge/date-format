@@ -12,6 +12,7 @@ children:
   - "[[03-tokens.md]]"
   - "[[04-locales-and-timezones.md]]"
   - "[[05-recipes-and-testing.md]]"
+  - "[AI Notes](ai-notes.md)"
 ---
 # Date formatting with @atom-forge/date-format
 
