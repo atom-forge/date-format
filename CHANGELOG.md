@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add an English BookMD documentation book covering package selection, API usage, tokens, locales, timezones and testing.
+
 ## [0.1.5] - 2026-10-07
 
 ### Changed
