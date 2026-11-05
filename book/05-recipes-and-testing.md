@@ -40,7 +40,7 @@ If users have preferences, pass their locale and timezone through your applicati
 
 ## Validate external input
 
-Invalid dates, locale syntax, or timezone identifiers can cause the underlying APIs to throw. The package does not catch these errors or supply a fallback.
+An invalid date makes `dateFormat` throw a `RangeError`; invalid locale syntax or timezone identifiers make the underlying Intl APIs throw. The package does not supply a fallback.
 
 ```ts
 import { dateFormat } from "@atom-forge/date-format";

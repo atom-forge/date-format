@@ -28,6 +28,8 @@ The examples below use `en-GB` digits.
 | `%I` | Two-digit minute | `05` |
 | `%s` | Unpadded second | `3` |
 | `%S` | Two-digit second | `03` |
+| `%L` | Three-digit milliseconds | `007` |
+| `%z` | UTC offset, locale-independent | `+01:00` |
 
 Uppercase month, day, hour, minute, and second tokens use two digits. Year tokens are the exception: `%Y` is the full year and `%y` is the two-digit year. The 24-hour tokens use the 00–23 cycle; 12-hour tokens use 1–12 before padding.
 
@@ -49,7 +51,7 @@ Uppercase month, day, hour, minute, and second tokens use two digits. Year token
 | `$z` | Short timezone name | `UTC` or an offset such as `GMT+1` |
 | `$Z` | Long timezone name | `Coordinated Universal Time` |
 
-Text depends on locale and runtime internationalization data. Punctuation in localized names is preserved. `$p` always uses lowercase `am` or `pm`, independently of the chosen locale; `$P` is localized.
+Text depends on locale and runtime internationalization data. When the template also contains `%d` or `%D`, month names use the locale's contextual form, so inflecting languages get the correct case (Russian `24 декабря`, not `24 декабрь`). Punctuation in localized names is preserved. `$p` always uses lowercase `am` or `pm`, independently of the chosen locale; `$P` is localized.
 
 > [!note] Similar names, different fields
 > `%D` is the day of the month, while `$D` is the weekday name. A narrow weekday such as `$d` is compact but may not uniquely identify a weekday.
@@ -80,7 +82,12 @@ dateFormat("YYYY-MM-DD", instant, "en-GB", "UTC");
 // "YYYY-MM-DD"
 ```
 
-There is no dedicated token-escaping syntax. Quoting a token or doubling a prefix does not prevent recognized tokens from being replaced.
+To output a literal `%` or `$`, double it. Quoting a token does not escape it:
+
+```ts
+dateFormat("50%%off on %d $$M", instant, "en-GB", "UTC");
+// "50%off on 24 $M"
+```
 
 > [!tip] Translate patterns explicitly
 > When migrating from another library, translate each field using this table instead of copying the old template. Unsupported patterns are not rejected; they remain literal text.

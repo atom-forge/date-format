@@ -58,11 +58,11 @@ dateFormat("%H:%I", "2024-12-24T14:05:03Z", "en-GB", "UTC");
 // "14:05"
 ```
 
-Numeric timestamps are not accepted by the TypeScript API. Wrap epoch milliseconds in a `Date`:
+Numeric timestamps (epoch milliseconds) are accepted as well:
 
 ```ts
 const timestamp = Date.parse("2024-12-24T14:05:03Z");
-dateFormat("%Y-%M-%D", new Date(timestamp), "en-GB", "UTC");
+dateFormat("%Y-%M-%D", timestamp, "en-GB", "UTC");
 // "2024-12-24"
 ```
 

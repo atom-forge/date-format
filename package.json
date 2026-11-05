@@ -18,8 +18,9 @@
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"default": "./dist/index.js"
 		}
 	},
 	"repository": {
@@ -36,7 +37,6 @@
 		"build": "tsc",
 		"test": "npm run build && node --test test/*.test.js",
 		"prepublishOnly": "npm test",
-		"release": "npm publish --access public",
 		"pub-check": "ship-it check",
 		"pub": "ship-it"
 	},

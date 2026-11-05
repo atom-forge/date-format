@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add an English BookMD documentation book covering package selection, API usage, tokens, locales, timezones and testing.
+- Add `%L` (three-digit milliseconds) and `%z` (locale-independent UTC offset such as `+01:00`) tokens.
+- Escape literal `%` and `$` by doubling them (`%%`, `$$`).
+- Accept numeric timestamps (epoch milliseconds) as the date argument.
+
+### Changed
+- Throw a `RangeError` for invalid dates and a `TypeError` for `null` instead of failing inside Intl or silently formatting the epoch.
+- Limit the internal formatter cache size.
+- List the `types` export condition first and add a `default` condition; remove the legacy `release` script.
+
+### Fixed
+- Use the contextual month form next to a day of month, so inflecting languages render e.g. `24 декабря` instead of `24 декабрь`.
+- Return the related Gregorian year for `%Y`/`%y` in calendars without a numeric year instead of an empty string.
 
 ## [0.1.5] - 2026-10-07
 
