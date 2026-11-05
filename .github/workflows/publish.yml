@@ -25,7 +25,6 @@ jobs:
           repository: atom-forge/ship
           ref: 8410051f6bbcbafcc4826d3eeb78f1001e9aebdc
           path: ship
-          token: ${{ secrets.SHIP_READ_TOKEN }}
           persist-credentials: false
       - uses: actions/setup-node@v6
         with:
