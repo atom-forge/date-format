@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-11-05
+
 ### Added
 - Add an English BookMD documentation book covering package selection, API usage, tokens, locales, timezones and testing.
 - Add `%L` (three-digit milliseconds) and `%z` (locale-independent UTC offset such as `+01:00`) tokens.
