@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add an Upgrading chapter to the book with migration steps for each change that may need action.
+- Ship the documentation as single-page English (`docs/en/index.md`) and Hungarian (`docs/hu/index.md`) versions derived from the book.
+
+### Changed
+- Link README.md and README-AI.md to `docs/en/index.md`.
+
+### Removed
+- Remove `docs/api.md`; its content is part of the book and `docs/en/index.md`.
+
 ## [0.1.6] - 2026-11-05
 
 ### Added
@@ -16,12 +26,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accept numeric timestamps (epoch milliseconds) as the date argument.
 
 ### Changed
-- Throw a `RangeError` for invalid dates and a `TypeError` for `null` instead of failing inside Intl or silently formatting the epoch.
+- **Breaking:** Throw a `RangeError` for invalid dates and a `TypeError` for `null` instead of failing inside Intl or silently formatting the epoch.
+- **Breaking:** Treat `%%`, `$$`, `%L` and `%z` in templates as escapes and tokens instead of literal text.
 - Limit the internal formatter cache size.
 - List the `types` export condition first and add a `default` condition; remove the legacy `release` script.
 
 ### Fixed
-- Use the contextual month form next to a day of month, so inflecting languages render e.g. `24 декабря` instead of `24 декабрь`.
+- **Breaking:** Use the contextual month form next to a day of month, so inflecting languages render e.g. `24 декабря` instead of `24 декабрь`.
 - Return the related Gregorian year for `%Y`/`%y` in calendars without a numeric year instead of an empty string.
 
 ## [0.1.5] - 2026-10-07

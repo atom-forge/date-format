@@ -31,7 +31,9 @@ The examples below use `en-GB` digits.
 | `%L` | Three-digit milliseconds | `007` |
 | `%z` | UTC offset, locale-independent | `+01:00` |
 
-Uppercase month, day, hour, minute, and second tokens use two digits. Year tokens are the exception: `%Y` is the full year and `%y` is the two-digit year. The 24-hour tokens use the 00–23 cycle; 12-hour tokens use 1–12 before padding.
+Uppercase month, day, hour, minute, and second tokens use two digits. Year tokens are the exception: `%Y` is the full year and `%y` is the two-digit year. `%Y` is not zero-padded (year 33 renders as `33`) and has no era marker. The 24-hour tokens use the 00–23 cycle; 12-hour tokens use 1–12 before padding.
+
+`%z` always uses ASCII characters, independently of the locale: `+01:00`, `-05:00`, or `+00:00` for UTC.
 
 > [!warning] Month is not minute
 > `%M` means two-digit **month**. Use `%I` for two-digit **minutes**. These are package-specific tokens, not Moment, date-fns, or standard `strftime` patterns.
@@ -71,6 +73,9 @@ dateFormat("%g:%I $p", instant, "en-GB", "UTC");
 
 dateFormat("%Y/%Y", instant, "en-GB", "UTC");
 // "2024/2024"
+
+dateFormat("%Y-%M-%DT%H:%I:%S%z", instant, "en-GB", "Europe/Budapest");
+// "2024-12-24T15:05:03+01:00"
 ```
 
 ## Literals and unsupported patterns
@@ -92,4 +97,4 @@ dateFormat("50%%off on %d $$M", instant, "en-GB", "UTC");
 > [!tip] Translate patterns explicitly
 > When migrating from another library, translate each field using this table instead of copying the old template. Unsupported patterns are not rejected; they remain literal text.
 
-Continue with [[04-locales-and-timezones|Locales and timezones]].
+Continue with [[locales-and-timezones|Locales and timezones]].

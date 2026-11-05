@@ -19,7 +19,7 @@ const timestamp = dateFormat("%Y-%M-%D %H:%I:%S", instant, "en-GB", "UTC");
 ```
 
 > [!warning] This is a display string, not ISO serialization
-> A template can look like a timestamp without being a portable serialization format. For an ISO representation of the instant, use `instant.toISOString()`.
+> A template can look like a timestamp without being a portable serialization format. For an ISO representation of the instant in UTC, use `instant.toISOString()`; to include the offset of a named timezone, use `"%Y-%M-%DT%H:%I:%S%z"` with an ASCII-digit locale such as `en-GB`.
 
 ## Centralize your UI defaults
 
@@ -98,4 +98,4 @@ test("formats the same instant in Budapest", () => {
 | Text differs across machines | Check locale support and internationalization data. |
 | Formatting throws | Validate the date and inspect locale/timezone arguments. |
 
-Return to [[book|the book overview]] or revisit [[03-tokens|the token reference]].
+Continue with [[upgrading|Upgrading]], return to [[book|the book overview]], or revisit [[tokens|the token reference]].

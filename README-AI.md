@@ -12,7 +12,7 @@ Do not use it for custom date parsing, input validation, date arithmetic, durati
 
 ## Read before generating code
 
-Read the shared [API reference](./docs/api.md) for the signature, defaults, examples, complete token reference, and runtime caveats. Tokens are package-specific, not Moment/date-fns/strftime-compatible. For reproducible output, supply an explicit date, locale, and timezone.
+Read the [documentation](./docs/en/index.md) for the signature, defaults, examples, complete token reference, runtime caveats, and upgrade notes between versions. Tokens are package-specific, not Moment/date-fns/strftime-compatible. For reproducible output, supply an explicit date, locale, and timezone.
 
 See [README.md](./README.md) for installation.
 

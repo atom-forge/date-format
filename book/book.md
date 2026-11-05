@@ -7,11 +7,12 @@ id: atom-forge-date-format
 intro: A practical guide to token-based date formatting, localization, and reliable timezone handling.
 tags: [typescript, javascript, intl, date-format]
 children:
-  - "[[01-overview.md]]"
-  - "[[02-usage.md]]"
-  - "[[03-tokens.md]]"
-  - "[[04-locales-and-timezones.md]]"
-  - "[[05-recipes-and-testing.md]]"
+  - "[[overview.md]]"
+  - "[[usage.md]]"
+  - "[[tokens.md]]"
+  - "[[locales-and-timezones.md]]"
+  - "[[recipes-and-testing.md]]"
+  - "[[upgrading.md]]"
   - "[AI Notes](ai-notes.md)"
 ---
 # Date formatting with @atom-forge/date-format
@@ -25,11 +26,12 @@ This book takes you from choosing the package to writing predictable templates a
 
 ## Reading path
 
-1. [[01-overview|Overview]] — purpose, scope, and how formatting works.
-2. [[02-usage|Installation and API]] — your first call and the four parameters.
-3. [[03-tokens|Tokens and templates]] — the complete token reference.
-4. [[04-locales-and-timezones|Locales and timezones]] — displaying the same instant in different contexts.
-5. [[05-recipes-and-testing|Recipes and testing]] — practical patterns, validation, and reproducible tests.
+- [[overview|Overview]] — purpose, scope, and how formatting works.
+- [[usage|Installation and API]] — your first call and the four parameters.
+- [[tokens|Tokens and templates]] — the complete token reference.
+- [[locales-and-timezones|Locales and timezones]] — displaying the same instant in different contexts.
+- [[recipes-and-testing|Recipes and testing]] — practical patterns, validation, and reproducible tests.
+- [[upgrading|Upgrading]] — changes that need action when you move to a newer version.
 
 > [!note] Predictable examples
 > Examples generally use an explicit instant and timezone rather than the current time or your machine's timezone. Localized wording still depends on the runtime's internationalization data.

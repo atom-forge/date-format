@@ -22,17 +22,19 @@ The package has no runtime package dependencies. It provides one ESM named expor
 | Custom input parsing, date arithmetic, or scheduling | A separate solution appropriate to the task |
 
 > [!warning] Formatting is not parsing
-> A string input is passed to JavaScript's `Date` constructor. The format template describes the output, not the input. The package does not parse custom input patterns or validate form fields.
+> A string or numeric input is passed to JavaScript's `Date` constructor. The format template describes the output, not the input. The package does not parse custom input patterns or validate form fields.
 
 ## How formatting works
 
 ```mermaid
 flowchart TD
-    A[Date or string input] --> B{Is the input a string?}
-    B -->|Yes| C[Parse with the Date constructor]
-    B -->|No| D[Use the Date instance]
-    C --> E[Find recognized tokens in the template]
-    D --> E
+    A[Date, string, or timestamp input] --> B{Is the input a Date?}
+    B -->|No| C[Convert with the Date constructor]
+    B -->|Yes| D[Use the Date instance]
+    C --> V{Valid date?}
+    D --> V
+    V -->|No| X[Throw RangeError]
+    V -->|Yes| E[Find recognized tokens in the template]
     E --> F[Format date parts with locale and timezone]
     F --> G[Normalize numeric padding and AM/PM]
     G --> H[Replace tokens and preserve literal text]
@@ -46,4 +48,4 @@ Formatting does not mutate the input date. Supplying a timezone changes how an i
 > [!tip] Keep display and storage separate
 > Store instants in a suitable timestamp representation and format them when displaying them. A formatted UI string is not a replacement for a timestamp.
 
-Continue with [[02-usage|Installation and API]].
+Continue with [[usage|Installation and API]].

@@ -34,7 +34,7 @@ const label = dateFormat("%Y-%M-%D %H:%I", instant, "en-GB", "UTC");
 ```ts
 function dateFormat(
   format: string,
-  date?: Date | string,
+  date?: Date | string | number,
   lang?: string,
   timeZone?: string,
 ): string;
@@ -43,11 +43,13 @@ function dateFormat(
 | Parameter | Meaning | Default |
 | --- | --- | --- |
 | `format` | Case-sensitive tokens and literal text | Required |
-| `date` | A `Date` instance or a string parsed by `new Date` | Current time |
+| `date` | A `Date` instance, a string parsed by `new Date`, or epoch milliseconds | Current time |
 | `lang` | Locale used by the internationalization APIs | `"en-GB"` |
 | `timeZone` | Timezone identifier, such as `"UTC"` or `"Europe/Budapest"` | Runtime's default timezone |
 
 The return value is a string. There is no options object or additional configuration API.
+
+An invalid date throws a `RangeError`, and `null` throws a `TypeError`; see [[recipes-and-testing|Recipes and testing]] for validating external input.
 
 ## Input variants
 
@@ -78,4 +80,4 @@ dateFormat("%Y-%M-%D", undefined, "en-GB", "Europe/Budapest");
 > [!note] Runtime requirements
 > The runtime must support `Intl.DateTimeFormat`, `formatToParts`, and the locale/timezone data you need. The package also uses `Intl.NumberFormat` for localized numeric padding.
 
-Continue with [[03-tokens|Tokens and templates]].
+Continue with [[tokens|Tokens and templates]].

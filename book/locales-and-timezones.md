@@ -36,7 +36,21 @@ dateFormat("%Y. $M %d.", instant, "hu-HU", "UTC");
 ```
 
 > [!warning] Locale affects more than names
-> A locale can affect digits and calendar behavior too. Do not assume every locale produces ASCII digits or Gregorian years. This package does not force one numbering system or calendar for all locales.
+> A locale can affect digits and calendar behavior too. Do not assume every locale produces ASCII digits or Gregorian years. This package does not force one numbering system or calendar for all locales. For calendars without a numeric year, such as `zh-CN-u-ca-chinese`, `%Y` falls back to the related Gregorian year.
+
+## Month names in context
+
+When the template contains a day of month (`%d` or `%D`), `$M` and `$m` use the locale's contextual month form. In inflecting languages this is a different grammatical case than the standalone name:
+
+```ts
+dateFormat("%d $M %Y", instant, "ru-RU", "UTC");
+// "24 декабря 2024"
+
+dateFormat("$M %Y", instant, "ru-RU", "UTC");
+// "декабрь 2024"
+```
+
+Some locales include a particle in the contextual form: Catalan renders `%d $M` as `24 de desembre`, so do not add `de` to the template yourself. If a locale only offers a numeric month next to a day, the standalone name is used.
 
 ## One instant, different clocks
 
@@ -83,4 +97,4 @@ That output follows JavaScript's date parsing and timezone conversion; it is not
 
 A `timeZone` argument only controls display. It does not interpret a string without an offset as a wall-clock time in that named timezone. Convert or resolve such inputs into an instant with a suitable separate solution before formatting.
 
-Continue with [[05-recipes-and-testing|Recipes and testing]].
+Continue with [[recipes-and-testing|Recipes and testing]].
