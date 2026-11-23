@@ -26,4 +26,4 @@ dateFormat("%Y-%M-%D %H:%I", date, "en-GB", "UTC");
 See the [documentation](./docs/en/index.md) ([magyarul](./docs/hu/index.md)) for
 the function signature, defaults, examples, complete token reference,
 date/locale/timezone caveats, and upgrade notes. It is also published as a book
-at https://books.atom-forge.eu.
+at https://books.atomforge.eu.

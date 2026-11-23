@@ -1,4 +1,4 @@
-<!-- Derived from the book in book/ (https://books.atom-forge.eu). Change the book first, then update this file and docs/hu/index.md. -->
+<!-- Derived from the book in book/ (https://books.atomforge.eu). Change the book first, then update this file and docs/hu/index.md. -->
 
 # Date formatting with @atom-forge/date-format
 
